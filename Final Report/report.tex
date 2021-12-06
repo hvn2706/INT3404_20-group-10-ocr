@@ -13,6 +13,12 @@
 \newcolumntype{L}{>{\centering\arraybackslash}m{2cm}}
 \newcolumntype{M}{>{\centering\arraybackslash}m{6cm}}
 
+\hypersetup{
+    colorlinks=true,
+    linkcolor=magenta,     
+    urlcolor=cyan,
+}
+
 % \setlength{\parskip}{1em}
 
 \title {
@@ -125,6 +131,47 @@ Ta trích xuất vị trí của các blob này bằng thuật toán loang ma tr
 
 \pagebreak
 \section{Kết luận}
+Sau đây là kết quả đạt được khi thực nghiệm với 10 ảnh viết tay(đây là kết quả sau khi kiểm tra và đếm bằng tay):
+\begin{center}
+    \begin{tabular}{|c|c|c|c|} 
+        \hline
+        STT & Số từ trong ảnh & Số từ phát hiện đúng & Số phát hiện lỗi \\ 
+        \hline
+        1 & 120 & 112 & 19 \\
+        \hline
+        2 & 117 & 113 & 27 \\
+        \hline
+        3 & 35 & 36 & 5 \\ 
+        \hline
+        4 & 170 & 160 & 100 \\ 
+        \hline
+        5 & 117 & 121 & 28 \\ 
+        \hline
+        6 & 61 & 55 & 9 \\ 
+        \hline
+        7 & 34 & 30 & 13 \\ 
+        \hline
+        8 & 36 & 34 & 12 \\ 
+        \hline
+        9 & 9 & 9 & 0 \\ 
+        \hline
+        10 & 112 & 77 & 31 \\ 
+        \hline
+        Tổng & 811 & 747 & 244 \\ 
+        \hline
+    \end{tabular}
+\end{center}
+Độ chính xác đạt được là xấp xỉ 92.1\%, cao hơn một chút so với trong bài báo(87.6\%), lí do là vì sample được lấy khá lí tưởng và số lượng sample nhỏ.
+Tuy nhiên, đây chỉ là các trường hợp mà các chữ được viết theo dạng nối với nhau. Đối với trường hợp chữ viết cách xa nhau và không có nét nối thì gần như ta không phát hiện được đúng từ nào, ví dụ như ở hình \ref{fig:fig7}.
+Ta có thể kết luận được rằng phương pháp này có một điểm hạn chế là không áp dụng được cho những chữ viết tay "cụt", không có nét nối giữ các chữ trong một từ.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{failure.png}
+    \caption{Trường hợp đặc biệt}
+    \label{fig:fig7}
+\end{figure}
+
+
 \label{sec:4}
 
 \end{document}
