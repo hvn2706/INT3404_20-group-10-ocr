@@ -195,9 +195,11 @@ def join_rectangles(rectangles, ratio: float = 0.5):
     return rectangles
 
 
-def word_segment(image, noise=False):
+def word_segment(image, noise=False, lightness=8, join_ratio=0.5):
     """
     locate and extract words in a handwritten text image.
+    :param join_ratio:
+    :param lightness:
     :param noise: (Bool) median blur or not
     :param image: (numpy.ndarray) image of handwritten text
     :return: an image that has boxes surrounding each words, and a list of separated images of those words.
@@ -219,7 +221,7 @@ def word_segment(image, noise=False):
     for i, line in enumerate(lines):
 
         # Get the kernel
-        wh = round((lines[i][1] - lines[i][0]) / 8)
+        wh = round((lines[i][1] - lines[i][0]) / lightness)
         kernel = (get_anisotropic_gaussian_kernel(wh, sx, sx) + get_anisotropic_gaussian_kernel(wh, sy, sy)) / 2
 
         # Get the line image
@@ -255,7 +257,7 @@ def word_segment(image, noise=False):
 
         boxes.append((top_left, down_right))
     # print(boxes)
-    boxes = join_rectangles(boxes, ratio=0.7)
+    boxes = join_rectangles(boxes, ratio=join_ratio)
 
     for box in boxes:
         top_left = box[0]
