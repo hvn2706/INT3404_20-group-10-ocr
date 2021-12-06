@@ -1,0 +1,35 @@
+test0: 340 F 8 0.5
+test1: 131 F 8 0.5
+test2: 140 T 8 0.5
+test3: 41 F 8 0.5
+test4: 260 F 10 0.5
+test5: 149 F 12.5 0.7
+test6: 64 F 5 0.5
+test7: 43 F 10 0.4
+test8: 46 F 10 0.4
+test9: 9 F 10 0.1
+test10: 108 T 12 0.5
+
+đếm tay:
+test1: 120
+test2: 117
+test3: 35
+test4: 170
+test5: 117
+test6: 61
+test7: 34
+test8: 36
+test9: 9
+test10: 112
+
+đếm lỗi:
+test1: 19 
+test2: 27
+test3: 5
+test4: 100 
+test5: 28 
+test6: 9
+test7: 13
+test8: 12
+test9: 0
+test10: 31 
